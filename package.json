@@ -1,0 +1,53 @@
+{
+  "name": "brickland",
+  "version": "0.0.1",
+  "description": "My personal landing page built with tiny components just like bricks",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rimraf dist",
+    "lint": "eslint .",
+    "start": "node src/devServer",
+    "test": "npm run lint",
+    "prebuild": "npm run clean",
+    "build": "npm run build:webpack",
+    "build:webpack": "NODE_ENV=production webpack --config ./src/webpack.config.prod.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://balintsoos@github.com/balintsoos/brickland.git"
+  },
+  "keywords": [
+    "brick",
+    "land",
+    "components",
+    "react"
+  ],
+  "author": {
+    "name": "Balint Soos",
+    "email": "soosbalint95@gmail.com",
+    "url": "http://balintsoos.com/"
+  },
+  "contributors": [
+    {
+      "name": "Balint Soos",
+      "email": "soosbalint95@gmail.com",
+      "url": "http://balintsoos.com/"
+    }
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/balintsoos/brickland/issues"
+  },
+  "homepage": "https://github.com/balintsoos/brickland#readme",
+  "engines": {
+    "node": ">=6.1.0"
+  },
+  "devDependencies": {
+    "eslint": "2.12.0",
+    "eslint-config-airbnb": "9.0.1",
+    "eslint-plugin-import": "1.8.1",
+    "eslint-plugin-jsx-a11y": "1.5.3",
+    "eslint-plugin-react": "5.2.0",
+    "rimraf": "2.5.2"
+  }
+}
