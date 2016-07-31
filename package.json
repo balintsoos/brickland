@@ -1,16 +1,14 @@
 {
   "name": "brickland",
   "version": "0.0.1",
-  "description": "My personal landing page built with tiny components just like bricks",
+  "private": true,
+  "description": "My personal landing page built with tiny React components",
   "main": "index.js",
   "scripts": {
-    "clean": "rimraf dist",
     "lint": "eslint .",
-    "start": "node src/devServer",
     "test": "npm run lint",
-    "prebuild": "npm run clean",
-    "build": "npm run build:webpack",
-    "build:webpack": "NODE_ENV=production webpack --config ./src/webpack.config.prod.js"
+    "devServer": "NODE_ENV=development ./node_modules/.bin/hjs-dev-server",
+    "start": "npm run devServer"
   },
   "repository": {
     "type": "git",
@@ -19,8 +17,12 @@
   "keywords": [
     "brick",
     "land",
+    "landing",
+    "page",
     "components",
-    "react"
+    "react",
+    "app",
+    "router"
   ],
   "author": {
     "name": "Balint Soos",
@@ -43,11 +45,28 @@
     "node": ">=6.1.0"
   },
   "devDependencies": {
+    "babel-core": "6.11.4",
+    "babel-loader": "6.2.4",
+    "babel-preset-es2015": "6.9.0",
+    "babel-preset-react": "6.11.1",
+    "babel-preset-react-hmre": "1.1.1",
+    "babel-preset-stage-0": "6.5.0",
+    "css-loader": "0.23.1",
     "eslint": "2.12.0",
     "eslint-config-airbnb": "9.0.1",
     "eslint-plugin-import": "1.8.1",
     "eslint-plugin-jsx-a11y": "1.5.3",
     "eslint-plugin-react": "5.2.0",
-    "rimraf": "2.5.2"
+    "file-loader": "0.9.0",
+    "hjs-webpack": "8.3.0",
+    "postcss-loader": "0.9.1",
+    "style-loader": "0.13.1",
+    "url-loader": "0.5.7",
+    "webpack": "1.13.1"
+  },
+  "dependencies": {
+    "react": "15.3.0",
+    "react-dom": "15.3.0",
+    "react-router": "2.6.1"
   }
 }
