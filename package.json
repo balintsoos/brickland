@@ -4,12 +4,6 @@
   "private": true,
   "description": "My personal landing page built with tiny React components",
   "main": "index.js",
-  "scripts": {
-    "lint": "eslint .",
-    "test": "npm run lint",
-    "devServer": "NODE_ENV=development ./node_modules/.bin/hjs-dev-server",
-    "start": "npm run devServer"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://balintsoos@github.com/balintsoos/brickland.git"
@@ -43,6 +37,14 @@
   "homepage": "https://github.com/balintsoos/brickland#readme",
   "engines": {
     "node": ">=6.1.0"
+  },
+  "scripts": {
+    "start": "npm run devServer",
+    "prebuild": "npm test",
+    "build": "webpack",
+    "test": "npm run lint",
+    "lint": "eslint .",
+    "devServer": "NODE_ENV=development hjs-dev-server"
   },
   "devDependencies": {
     "autoprefixer": "6.3.7",
