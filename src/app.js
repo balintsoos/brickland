@@ -1,14 +1,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-class App extends React.Component {
-  constructor(props) {
-    super(props)
-  }
+import './app.css'
 
+class App extends React.Component {
   render() {
     return (
-      <div>Hi</div>
+      <div>
+        Hi
+      </div>
     )
   }
 }
