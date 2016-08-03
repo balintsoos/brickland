@@ -25,6 +25,14 @@ const config = createConfig({
   clearBeforeBuild: true
 })
 
+// reference paths with alias
+config.resolve.root = [src, nodeModules]
+config.resolve.alias = {
+  styles: join(src, 'styles'),
+  components: join(src, 'components'),
+  utils: join(src, 'components')
+}
+
 // CSS Modules
 const cssModuleNames = `${isDev ? '[path][name]__[local]__' : ''}[hash:base64:5]`
 const matchCssLoader = /(^|!)(css-loader)($|!)/
