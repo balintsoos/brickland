@@ -28,9 +28,9 @@ const config = createConfig({
 // reference paths with alias
 config.resolve.root = [src, nodeModules]
 config.resolve.alias = {
-  styles: join(src, 'styles'),
   components: join(src, 'components'),
-  utils: join(src, 'components')
+  routes: join(src, 'routes'),
+  styles: join(src, 'styles')
 }
 
 // CSS Modules
