@@ -16,8 +16,8 @@
     "es6": true
   },
   "rules": {
-    "semi": ["error", "never"],
-    "comma-dangle": ["error", "never"],
-    "react/prefer-stateless-function": "off"
+    "semi": [2, "never"],
+    "comma-dangle": [2, "never"],
+    "react/prefer-stateless-function": 0
   }
 }
