@@ -1,16 +1,28 @@
 import React from 'react'
-import { Link } from 'react-router'
+
+import Header from 'components/Header'
+import Footer from 'components/Footer'
 
 import styles from './styles.module.css'
 
 class App extends React.Component {
   render() {
     return (
-      <div className={styles.wrapper}>
-        <Link to="about">About</Link>
+      <div>
+        <Header />
+
+        <div className={styles.wrapper}>
+          {this.props.children}
+        </div>
+
+        <Footer />
       </div>
     )
   }
+}
+
+App.propTypes = {
+  children: React.PropTypes.element.isRequired
 }
 
 export default App
