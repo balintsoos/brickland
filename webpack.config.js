@@ -71,11 +71,11 @@ config.module.loaders.push({
 
 // PostCSS
 config.postcss = [].concat([
-  precss(),
+  precss({}),
   autoprefixer({
     browsers: ['last 2 versions']
   }),
-  cssnano()
+  cssnano({})
 ])
 
 module.exports = config
