@@ -33,49 +33,13 @@ config.resolve.alias = {
   styles: join(src, 'styles')
 }
 
-// CSS Modules
-const cssModuleNames = `${isDev ? '[path][name]__[local]__' : ''}[hash:base64:5]`
-const matchCssLoader = /(^|!)(css-loader)($|!)/
-
-// find the old CSS loader
-const findCssLoader = (loaders, match) => {
-  const found = loaders.filter(l => l && l.loader && l.loader.match(match))
-
-  return found ? found[0] : null
-}
-
-const oldCssLoader = findCssLoader(config.module.loaders, matchCssLoader)
-
-
-// create the new CSS loader
-const newCssMatch = `$1$2?modules&localIdentName=${cssModuleNames}$3`
-const newCssLoader = Object.assign({}, oldCssLoader, {
-  test: /\.module\.css$/,
-  include: [src],
-  loader: oldCssLoader.loader.replace(matchCssLoader, newCssMatch)
-})
-
-// add to the existing loaders
-config.module.loaders.push(newCssLoader)
-
-// modify the old loader
-oldCssLoader.test = new RegExp(`[^module]${oldCssLoader.test.source}`)
-oldCssLoader.loader = newCssLoader.loader
-
-// create another css loader to load css from node_modules
-config.module.loaders.push({
-  test: /\.css$/,
-  include: [nodeModules],
-  loader: 'style!css'
-})
-
-// PostCSS
-config.postcss = [].concat([
+config.postcss = [
   precss({}),
   autoprefixer({
     browsers: ['last 2 versions']
   }),
   cssnano({})
-])
+]
+
 
 module.exports = config

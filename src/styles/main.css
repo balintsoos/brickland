@@ -1,0 +1,11 @@
+$test: red;
+
+.header {
+  width: 100%;
+  height: 80px;
+  background-color: $test;
+}
+
+.wrapper {
+  background-color: yellow;
+}

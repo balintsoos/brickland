@@ -3,15 +3,13 @@ import React from 'react'
 import Header from 'components/Header'
 import Footer from 'components/Footer'
 
-import styles from './styles.module.css'
-
 class App extends React.Component {
   render() {
     return (
       <div>
         <Header />
 
-        <div className={styles.wrapper}>
+        <div className="wrapper">
           {this.props.children}
         </div>
 
