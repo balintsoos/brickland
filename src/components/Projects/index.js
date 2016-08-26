@@ -4,10 +4,9 @@ import { Link } from 'react-router'
 class Projects extends React.Component {
   render() {
     return (
-      <div>
-        <h1>Projects</h1>
-        <Link to="/">Back</Link>
-        <Link to="about">About</Link>
+      <div className="sub-header">
+        <Link to="/" className="back-button"><span>&lang;</span></Link>
+        <h2 className="sub-title">Projects</h2>
       </div>
     )
   }

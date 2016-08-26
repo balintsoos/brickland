@@ -1,15 +1,17 @@
 import React from 'react'
 
+import Hero from 'components/Hero'
 import Header from 'components/Header'
 import Footer from 'components/Footer'
 
 class App extends React.Component {
   render() {
     return (
-      <div>
+      <div className="app">
+        <Hero />
         <Header />
 
-        <div className="wrapper">
+        <div className="content-wrapper">
           {this.props.children}
         </div>
 

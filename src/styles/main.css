@@ -1,11 +1,120 @@
-$test: red;
+$secondary: rgba(43, 45, 66, 1);
+$grey: rgba(141, 153, 174, 1);
+$white: #fff;
+$light: rgba(237, 242, 244, 1);
+$accent: rgba(239, 35, 60, 1);
+$primary: rgba(217, 4, 41, 1);
+$hero: ;
 
-.header {
-  width: 100%;
-  height: 80px;
-  background-color: $test;
+$footer-height: 100px;
+
+$header-background-color: $primary;
+$hero-background-color: $secondary;
+
+@import 'https://fonts.googleapis.com/css?family=Montserrat';
+
+html, body {
+  height: 100%;
+  background-color: $secondary;
 }
 
-.wrapper {
-  background-color: yellow;
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: $background-color-aboutme;
+  color: $font-color-main;
+  font-size : 1.6rem;
+  font-family: 'Montserrat', sans-serif;
+}
+
+div#root,
+.app {
+  width: 100%;
+  height: 100%;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 80px;
+  background-color: $header-background-color;
+  color: $white;
+
+  .logo {
+    margin-left: 40px;
+    margin-right: 40px;
+    font-size: 4rem;
+
+    .text {
+      display: inline;
+    }
+
+    .dot {
+      font-weight: 700;
+    }
+  }
+}
+
+.sub-header {
+  background-color: $secondary;
+  color: $light;
+
+  .back-button {
+    margin: 5px;
+    font-size: 5rem;
+  }
+
+  .sub-title {
+    display: inline;
+  }
+}
+
+.content-wrapper {
+  height: 100%;
+  background-color: $light;
+  margin-top: 100vh;
+}
+
+.footer {
+  width: 100%;
+  height: $footer-height;
+  background-color: $secondary;
+  color: $light;
+}
+
+.hero {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  width: 100%;
+  height: 100%;
+
+  background-image: url("http://www.balintsoos.com/img/prague.jpg");
+  background-size: contain;
+
+  color: $white;
+
+  .line {
+    text-align: right;
+    font-weight: 700;
+    font-size: 30rem;
+    text-transform: uppercase;
+  }
 }
